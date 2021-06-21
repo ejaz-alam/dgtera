@@ -1,0 +1,17 @@
+{
+    "name": "dgtera/module-clubhouse",
+    "description": "DG Tera",
+    "type": "magento2-module",
+    "license": "GPL-3.0",
+    "authors": [{}],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "DGTERA\\Clubhouse\\": ""
+        }
+    }
+}

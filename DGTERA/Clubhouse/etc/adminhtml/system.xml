@@ -1,0 +1,22 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="dgtera" translate="label" sortOrder="999">
+			<label>DG Tera</label>
+		</tab>
+		<section id="club_house_customer" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Club House</label>
+			<tab>dgtera</tab>
+			<resource>DGTERA_Clubhouse::config_dgtera_clubhouse</resource>
+			<group id="customer" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>Customer</label>
+                <field id="clubhouse_profile_show" type="select" sortOrder="75" showInWebsite="1" showInStore="0" showInDefault="1" translate="label">
+                    <label>Profile</label>
+                    <comment/>
+                    <source_model>Magento\Config\Model\Config\Source\Nooptreq</source_model>
+                    <backend_model>Magento\Customer\Model\Config\Backend\Show\Customer</backend_model>
+                </field>
+			</group>
+		</section>
+	</system>
+</config>
