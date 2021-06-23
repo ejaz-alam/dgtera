@@ -93,13 +93,7 @@ class AddClubhouseProfileCustomerAttribute implements DataPatchInterface
                 'checkout_register'
             ]
         ]);
-        $attribute->addData([
-            'attribute_set_id' => $attributeSetId,
-            'attribute_group_id' => $attributeGroupId
-
-        ]);
         $attribute->save();
-
         $this->moduleDataSetup->getConnection()->endSetup();
     }
 

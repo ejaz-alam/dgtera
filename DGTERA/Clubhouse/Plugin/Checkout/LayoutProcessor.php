@@ -41,11 +41,15 @@ class LayoutProcessor
                 'component' => 'Magento_Ui/js/form/element/abstract',
                 'config' => [
                     'template' => 'ui/form/field',
+                    'customScope' => 'shippingAddress',
                     'elementTmpl' => 'ui/form/element/input',
                     'id' => 'clubhouse_profile',
+                    'tooltip' => [
+                        'description' => 'Customer Clubhouse Profile',
+                    ],
                 ],
                 'label' => __('Clubhouse Profile'),
-                'dataScope' => 'custom_attributes.customer_clubhouse_profile',
+                'dataScope' => 'shippingAddress.clubhouse_profile',
                 'provider' => 'checkoutProvider',
                 'visible' => true,
                 'validation' => [
@@ -59,7 +63,8 @@ class LayoutProcessor
 
     public function isEnabled()
     {
-        return $this->_getAttribute('clubhouse_profile') ? (bool)$this->_getAttribute('clubhouse_profile')->isVisible() : false;
+        return $this->_getAttribute('clubhouse_profile')
+            && (bool)$this->_getAttribute('clubhouse_profile')->isVisible();
     }
 
     public function isRequired()

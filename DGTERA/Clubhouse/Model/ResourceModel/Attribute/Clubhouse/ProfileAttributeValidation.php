@@ -1,9 +1,8 @@
 <?php
+
 declare(strict_types=1);
 
-
 namespace DGTERA\Clubhouse\Model\ResourceModel\Attribute\Clubhouse;
-
 
 use Magento\Eav\Model\Entity\Attribute\Backend\AbstractBackend;
 use Magento\Framework\DataObject;
@@ -27,7 +26,7 @@ class ProfileAttributeValidation extends AbstractBackend
     }
 
     /**
-     * @param $object
+     * @param $object:::
      * @return bool
      * @throws LocalizedException
      */
@@ -40,7 +39,8 @@ class ProfileAttributeValidation extends AbstractBackend
 
         if (($this->getAttribute()->getIsRequired() && $value < $this->minLength) || $value > $this->maLength) {
             throw new LocalizedException(
-                __('The value of attribute "%1" must be greater/equals to %2 or less than %3',
+                __(
+                    'The value of attribute "%1" must be greater/equals to %2 or less than %3',
                     $attributeCode,
                     $this->minLength,
                     $this->maLength

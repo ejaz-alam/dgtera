@@ -1,18 +1,19 @@
 <?php
-declare(strict_types=1);
 
+declare(strict_types=1);
 
 namespace DGTERA\Clubhouse\Block\Widget;
 
-
 use Magento\Customer\Api\CustomerMetadataInterface;
 use Magento\Customer\Block\Widget\AbstractWidget;
+use Magento\Customer\Helper\Address;
+use Magento\Framework\View\Element\Template\Context;
 
 class ClubhouseProfile extends AbstractWidget
 {
     public function __construct(
-        \Magento\Framework\View\Element\Template\Context $context,
-        \Magento\Customer\Helper\Address $addressHelper,
+        Context $context,
+        Address $addressHelper,
         CustomerMetadataInterface $customerMetadata,
         array $data = []
     ) {
@@ -46,5 +47,4 @@ class ClubhouseProfile extends AbstractWidget
         $attribute = $this->_getAttribute($attributeCode);
         return $attribute ? __($attribute->getStoreLabel()) : '';
     }
-
 }

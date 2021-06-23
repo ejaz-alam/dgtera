@@ -12,7 +12,7 @@ class ClubhouseProfileConfig extends \Magento\Framework\App\Config\Value
     /**
      * @var \Magento\Eav\Model\Config
      */
-    protected $_eavConfig;
+    private $eavConfig;
 
     /**
      * @var \Magento\Store\Model\StoreManagerInterface
@@ -41,7 +41,7 @@ class ClubhouseProfileConfig extends \Magento\Framework\App\Config\Value
         \Magento\Framework\Data\Collection\AbstractDb $resourceCollection = null,
         array $data = []
     ) {
-        $this->_eavConfig = $eavConfig;
+        $this->eavConfig = $eavConfig;
         parent::__construct($context, $registry, $config, $cacheTypeList, $resource, $resourceCollection, $data);
         $this->storeManager = $storeManager;
     }
@@ -63,7 +63,7 @@ class ClubhouseProfileConfig extends \Magento\Framework\App\Config\Value
      */
     protected function _getAttributeObjects()
     {
-        return [$this->_eavConfig->getAttribute('customer', $this->_getAttributeCode())];
+        return [$this->eavConfig->getAttribute('customer', $this->_getAttributeCode())];
     }
 
     /**

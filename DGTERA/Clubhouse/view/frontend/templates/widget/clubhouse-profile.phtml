@@ -1,9 +1,9 @@
 <div class="field clubhouse_profile<?= $block->isRequired() ? ' required' : ''; ?>">
-    <label class="label" for="custom_attribute">
+    <label class="label" for="clubhouse_profile">
         <span><?php echo __('Clubhouse Profile');?></span>
     </label>
     <div class="control">
         <input type="text" name="clubhouse_profile" id="clubhouse_profile" value=""
-               title="<?php echo __('Custom Attribute'); ?>" class="input-text" data-validate='{"max_text_length":16,"min_text_length":1}'>
+               title="<?php echo __('Custom Attribute'); ?>" class="input-text" <?= $block->isRequired() ? ' data-validate="{required:true}"' : '' ?>>
     </div>
 </div>
