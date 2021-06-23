@@ -3,6 +3,8 @@
 	<module name="DGTERA_Clubhouse">
 		<sequence>
 			<module name="Magento_Customer"/>
+			<module name="Magento_Quote"/>
+			<module name="Magento_Sales"/>
 		</sequence>
 	</module>
 </config>
